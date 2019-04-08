@@ -4,7 +4,7 @@ class CartsController < ApplicationController
       flash[:alert] = "Must have stuff in your cart to checkout"
       redirect_back(fallback_location: :root)
     end
-    @order = Order.new
+    @order = Order.create
     @order.user_id = current_user.id
     @order.line_items = current_cart.line_items
     @order.total = current_cart.total
