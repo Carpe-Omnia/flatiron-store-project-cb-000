@@ -10,6 +10,7 @@ class CartsController < ApplicationController
     @order.cart = @cart
     @order.total = @cart.total
     @cart.order_id = @order.id
+    @cart.user_id = 0
     @cart.save
     @order.save
   end
