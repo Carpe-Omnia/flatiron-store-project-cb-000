@@ -4,6 +4,6 @@ class LineItemsController < ApplicationController
     puts(@item)
     puts(current_user)
     flash[:alert] = "Item added to cart"
-    redirect_back(fallback_location: root_path)
+    redirect_back(fallback_location: root)
   end
 end
