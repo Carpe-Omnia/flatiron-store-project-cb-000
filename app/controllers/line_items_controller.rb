@@ -18,8 +18,7 @@ class LineItemsController < ApplicationController
     else
       @cart.line_items << @line_item
     end
-    @item.update(inventory: @item.inventory - 1)
-    #maybe leave this until checkout? Seems like an exploitable feature
+    @item.update(inventory: @item.inventory - 1)   #maybe leave this until checkout? Seems like an exploitable feature
     @cart.save
     @line_item.save
     puts @cart.line_items
