@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_04_07_224102) do
     t.string "title"
     t.integer "inventory"
     t.integer "price"
+    t.integer "category_id"
   end
 
   create_table "line_items", force: :cascade do |t|
