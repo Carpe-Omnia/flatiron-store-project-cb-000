@@ -4,10 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   def current_cart
     if user_signed_in?
-      cart = Cart.find_by(user_id: current_user.id)
+      Cart.find_by(user_id: current_user.id)
     else
-      cart = nil
+      nil
     end
-    return cart
   end
 end
