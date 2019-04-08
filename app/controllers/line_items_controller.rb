@@ -8,6 +8,7 @@ class LineItemsController < ApplicationController
     @cart = Cart.find_or_create_by(user_id: current_user.id)
     @item = Item.find_by(id: params[:item_id])
     @line_item = LineItem.find_or_create_by(item_id: @item.id, cart_id: @cart.id)
+    puts @line_item.quantity
     if @cart.line_items.include?(@line_item)
       @line_item.quantity = @line_item.quantity + 1
     else
