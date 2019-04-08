@@ -16,6 +16,9 @@ ActiveRecord::Schema.define(version: 2019_04_07_224102) do
     t.integer "user_id"
   end
 
+  create_table "categories", force: :cascade do |t|
+  end
+
   create_table "items", force: :cascade do |t|
     t.string "title"
     t.integer "inventory"
@@ -26,6 +29,10 @@ ActiveRecord::Schema.define(version: 2019_04_07_224102) do
     t.integer "item_id"
     t.integer "cart_id"
     t.integer "quantity"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
