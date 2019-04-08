@@ -7,10 +7,10 @@ class CartsController < ApplicationController
     @order = Order.create
     @cart = current_cart
     @order.user_id = current_user.id
-    @order.cart = current_cart
-    @order.total = current_cart.total
-    current_cart.order_id = @order.id
-    current_cart.save
+    @order.cart = @cart
+    @order.total = @cart.total
+    @cart.order_id = @order.id
+    @cart.save
     @order.save
   end
 end
