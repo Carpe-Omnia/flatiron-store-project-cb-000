@@ -5,8 +5,9 @@ class CartsController < ApplicationController
       redirect_back(fallback_location: :root)
     end
     @order = Order.create
+    @cart = current_cart
     @order.user_id = current_user.id
-    @order.cart_id = current_cart.id
+    @order.cart = current_cart
     @order.total = current_cart.total
     current_cart.order_id = @order.id
     current_cart.save
