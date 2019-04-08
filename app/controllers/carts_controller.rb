@@ -8,7 +8,7 @@ class CartsController < ApplicationController
     @order.user_id = current_user.id
     @order.cart_id = current_cart.id
     @order.total = current_cart.total
-    current_cart.order = @order
+    current_cart.order_id = @order.id
     current_cart.save
     @order.save
   end
