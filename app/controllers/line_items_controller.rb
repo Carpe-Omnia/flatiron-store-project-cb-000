@@ -6,8 +6,9 @@ class LineItemsController < ApplicationController
       redirect_back(fallback_location: :root)
     else
       @item = Item.find_by(id: params[:item_id])
-      puts(@item)
-      puts(current_user)
+      #puts(@item)
+      #puts(current_user)
+      @line_item = LineItem.new(item_id: @item.id)
       flash[:alert] = "Item added to cart"
       redirect_back(fallback_location: :root)
     end
