@@ -1,6 +1,6 @@
 class StoreController < ApplicationController
   def index
-    @categories = []
-    @items = []
+    @categories = Category.all
+    @items = Item.all
   end
 end
