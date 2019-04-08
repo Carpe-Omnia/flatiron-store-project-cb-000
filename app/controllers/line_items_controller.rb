@@ -18,7 +18,7 @@ class LineItemsController < ApplicationController
     else
       @cart.line_items << @line_item
     end
-    @item.inventory -= 1
+    @item.update(inventory: @item.inventory - 1)
     @cart.save
     @line_item.save
     puts @cart.line_items
