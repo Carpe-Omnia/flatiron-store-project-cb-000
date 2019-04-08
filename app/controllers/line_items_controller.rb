@@ -9,7 +9,10 @@ class LineItemsController < ApplicationController
     @item = Item.find_by(id: params[:item_id])
     @line_item = LineItem.find_or_create_by(item_id: @item.id, cart_id: @cart.id)
     puts "quantity here"
-    puts @line_item.quantity
+    if @line_item.quantity == nil
+      @line_item.quantity = 1
+      @line_item.save
+    end
     if @cart.line_items.include?(@line_item)
       @line_item.quantity = @line_item.quantity + 1
     else
