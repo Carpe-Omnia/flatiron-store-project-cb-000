@@ -9,4 +9,5 @@ class ApplicationController < ActionController::Base
       nil
     end
   end
+  helper_method :current_cart
 end
