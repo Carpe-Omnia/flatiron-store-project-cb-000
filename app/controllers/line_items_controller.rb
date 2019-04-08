@@ -20,7 +20,7 @@ class LineItemsController < ApplicationController
     end
     @item.inventory -= 1
     @cart.save
-    @line_item.save 
+    @line_item.save
     puts @cart.line_items
     flash[:alert] = "Item added to cart"
     redirect_back(fallback_location: :root)
