@@ -7,6 +7,7 @@ class CartsController < ApplicationController
     @order = Order.new
     @order.user_id = current_user.id
     @order.line_items = current_cart.line_items
+    @order.total = current_cart.total
     @order.save
   end
 end
